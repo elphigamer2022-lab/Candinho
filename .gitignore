@@ -137,3 +137,30 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+# --- Conteúdo do modelo Node que já deve estar aqui ---
+/node_modules
+npm-debug.log*
+.npm
+.eslintcache
+.stylelintcache
+
+# Builds e Distribuição
+/dist
+/build
+/out
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+# --------------------------------------------------------
+
+
+# NOVO BLOCO: SEGURANÇA E BANCO DE DADOS (Adicione aqui)
+# Arquivos de Segurança e Banco de Dados
+.env             # Arquivo padrão para variáveis de ambiente (senhas do BD, chaves de API)
+.env.*
+secrets.js       # Arquivo comum para armazenar tokens secretos
+config.js        # Caso você tenha um arquivo de configuração de BD separado
