@@ -1,0 +1,793 @@
+/* Reset Básico: Remove margens e preenchimentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que preenchimento e borda não aumentem o tamanho do elemento */
+}
+
+/* Estilos globais do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Altere a fonte se quiser */
+    line-height: 1.6; /* Espaçamento entre as linhas */
+    background-color: #f4f4f4; /* Cor de fundo da página. Altere para sua preferência */
+    color: #333; /* Cor do texto principal */
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+    max-width: 1100px; /* Largura máxima do conteúdo */
+    margin: auto; /* Centraliza o container */
+    overflow: hidden; /* Limpa floats */
+    padding: 0 20px; /* Adiciona espaçamento nas laterais para telas menores */
+}
+
+/* Estilos do cabeçalho e navegação */
+header {
+    background: #000; /* Cor de fundo do cabeçalho. Altere a cor */
+    color: #fff; /* Cor do texto no cabeçalho */
+    padding: 1rem 0; /* Espaçamento interno (cima/baixo e laterais) */
+    position: sticky; /* Mantém o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+}
+
+nav {
+    display: flex; /* Usa flexbox para alinhamento */
+    justify-content: space-between; /* Espaça a logo e o menu */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem; /* Tamanho da fonte da logo. Você pode mudar */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex; /* Alinha os itens do menu na horizontal */
+}
+
+nav ul li {
+    margin-left: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul a {
+    color: #fff; /* Cor dos links do menu */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transição suave na cor ao passar o mouse */
+}
+
+nav ul a:hover {
+    color: #a5d6a7; /* Cor do link ao passar o mouse. Altere para sua cor de destaque */
+}
+
+/* Estilos das seções principais */
+main {
+    padding-bottom: 3rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000; /* Cor dos títulos. Altere a cor */
+}
+
+.cta-button {
+    display: inline-block;
+    background: #000; /* Cor do botão de chamada para ação. Altere a cor */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease; /* Transição suave na cor de fundo ao passar o mouse */
+}
+
+.cta-button:hover {
+    background: #000; /* Cor do botão ao passar o mouse. Altere a cor */
+}
+
+/* Estilos específicos da página inicial (index.html) */
+.hero {
+    background: url('images/hero-image.jpg') no-repeat center center/cover; /* Imagem de fundo. Altere o caminho 'images/hero-image.jpg' para sua imagem */
+    height: 60vh; /* Altura da seção de destaque */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Efeito de sobreposição escura na imagem. Altere o '0.5' para mudar a intensidade */
+}
+
+.hero-content {
+    z-index: 1; /* Garante que o conteúdo fique acima da sobreposição */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Tamanho da fonte do título principal. Altere o tamanho */
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2rem; /* Tamanho da fonte do parágrafo. Altere o tamanho */
+    margin-bottom: 20px;
+}
+
+.about-us, .services-preview, .catalog-section, .email-capture-section {
+    padding: 60px 0; /* Espaçamento interno das seções */
+}
+
+.about-us {
+    background: #e0e0e0; /* Cor de fundo da seção "Sobre Nós". Altere a cor */
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do card */
+    text-align: center;
+    flex: 1 1 300px;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos do Catálogo de Serviços */
+.catalog-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Cria uma grade responsiva com itens de no mínimo 280px */
+    gap: 30px; /* Espaçamento entre os itens da grade */
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.catalog-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease; /* Efeito de transição ao passar o mouse */
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px); /* Move o item para cima ao passar o mouse */
+}
+
+.catalog-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.item-content {
+    text-align: left;
+}
+
+.item-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000; /* Cor do preço. Altere a cor */
+    margin: 10px 0;
+}
+
+.item-obs {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Estilos do rodapé */
+footer {
+    background: #00332c; /* Cor de fundo do rodapé. Altere a cor */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos dos ícones de redes sociais no rodapé */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem; /* Tamanho dos ícones. Altere o tamanho */
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #a5d6a7; /* Cor dos ícones ao passar o mouse. Altere a cor */
+}
+
+/* Estilos do Chatbot e Carrinho */
+#chatbot-toggle-btn {
+    position: fixed; /* Posição fixa na tela */
+    bottom: 30px; /* Distância da parte inferior */
+    right: 30px; /* Distância da lateral direita */
+    width: 60px;
+    height: 60px;
+    background-color: #004d40; /* Cor de fundo do botão do chatbot. Altere a cor */
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Torna o botão redondo */
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 77, 64, 0.4);
+    z-index: 1001;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#cart-toggle-btn {
+    position: fixed;
+    bottom: 100px; /* Ajuste a posição vertical do botão do carrinho */
+    right: 30px; /* Distância da lateral direita */
+    width: 60px;
+    height: 60px;
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 77, 64, 0.4);
+    z-index: 1002;
+    transition: transform 0.3s ease;
+}
+
+#cart-toggle-btn:hover, #chatbot-toggle-btn:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff5722; /* Cor do contador. Altere a cor */
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+.add-to-cart-btn {
+    background-color: #000; /* Cor do botão "Adicionar ao Pedido". Altere a cor */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #004d40; /* Cor do botão ao passar o mouse */
+}
+
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fundo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#cart-items-list {
+    margin-top: 20px;
+    max-height: 300px; /* Altura máxima da lista de itens do carrinho */
+    overflow-y: auto; /* Adiciona barra de rolagem se a lista for muito longa */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item-info {
+    font-size: 1rem;
+    color: #333;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #004d40;
+}
+
+.cart-item .remove-item-btn {
+    background: none;
+    border: none;
+    color: #ff5722; /* Cor do botão de remover item. Altere a cor */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item .remove-item-btn:hover {
+    color: #e64a19;
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #004d40;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.secondary-button {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos para marketing (seções adicionais) */
+.email-capture-section, .promotions-section {
+    padding: 60px 0;
+    background-color: #e0e0e0;
+    text-align: center;
+}
+
+#whatsapp-capture-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#whatsapp-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Estilos da seção de avaliações */
+.reviews-section {
+    padding: 60px 0;
+    background-color: #f7f9fc;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    color: #004d40;
+    margin-bottom: 40px;
+}
+
+.review-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.review-form h3 {
+    margin-bottom: 20px;
+}
+
+.review-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.review-input:focus {
+    outline: none;
+    border-color: #004d40;
+}
+
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 2rem;
+    color: #ffc107; /* Cor das estrelas. Altere a cor */
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.rating-stars span {
+    transition: transform 0.2s ease;
+}
+
+.rating-stars span:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse nas estrelas */
+}
+
+.review-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.review-button:hover {
+    background-color: #000;
+}
+
+/* Estilos do chatbot */
+#chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 320px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    transform-origin: bottom right;
+}
+
+#chatbot-container.hidden {
+    transform: scale(0); /* Esconde o chatbot com uma animação de escala */
+    opacity: 0;
+    pointer-events: none;
+}
+
+#chatbot-header {
+    background: linear-gradient(90deg, #004d40, #00695c); /* Gradiente no cabeçalho. Altere as cores */
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#close-chatbot-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+#close-chatbot-btn:hover {
+    background-color: rgba(255,255,255,0.2); /* Cor de fundo ao passar o mouse no botão de fechar */
+}
+
+#chatbot-body {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Adiciona barra de rolagem no corpo do chat */
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f9fc; /* Cor de fundo do corpo do chat */
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.user-message {
+    background-color: #d1e7ff; /* Cor do balão de mensagem do usuário. Altere a cor */
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: #e9ecef; /* Cor do balão de mensagem do bot. Altere a cor */
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.message-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.option-button {
+    background-color: #6c757d; /* Cor dos botões de opção. Altere a cor */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.option-button:hover {
+    background-color: #5a6268;
+}
+
+#typing-indicator {
+    background-color: #e9ecef;
+    align-self: flex-start;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    max-width: 75%;
+    display: none;
+    font-style: italic;
+    color: #6c757d;
+}
+
+#typing-indicator span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out; /* Animação dos pontos de digitação */
+    margin: 0 1px;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-7px); }
+}
+
+#chatbot-footer {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f7f9fc;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: #004d40;
+    box-shadow: 0 0 0 0.2rem rgba(0, 77, 64, 0.25);
+}
+
+#send-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #004d40;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#send-btn:hover {
+    background-color: #00695c;
+    transform: translateY(-1px);
+}
+
+/* Estilos para responsividade em telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column; /* Altera a direção para coluna em telas pequenas */
+    }
+    
+    header nav ul {
+        flex-direction: row; /* Mantém os links em linha, mas centraliza */
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem; /* Reduz o tamanho do título em telas menores */
+    }
+    
+    .hero p {
+        display: none; /* Oculta o parágrafo de descrição em telas muito pequenas para economizar espaço */
+    }
+    
+    .catalog-grid {
+        grid-template-columns: 1fr; /* Exibe os itens em uma única coluna */
+    }
+    
+    #chatbot-container {
+        width: 90%;
+        height: 70%;
+        right: 5%;
+        bottom: 90px;
+    }
+    
+    #chatbot-toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    #cart-toggle-btn {
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin-top: 50px;
+    }
+    
+    .cart-item {
+        flex-wrap: wrap; 
+        justify-content: flex-start;
+    }
+    /* ================================================================= */
+/* ESTILOS PARA REGRAS DE SERVIÇO E CONDIÇÕES (Aviso de Alto Impacto) */
+/* ================================================================= */
+.regras-servico {
+    padding: 3rem 2rem;
+    max-width: 960px;
+    margin: 2rem auto;
+    /* Fundo suave com borda destacada para o alerta comercial */
+    background-color: #fff3cd; /* Amarelo claro suave */
+    border: 1px solid #ffc107; /* Borda amarela forte */
+    border-radius: 8px;
+    color: #495057;
+    text-align: center;
+}
+
+.regras-servico h2 {
+    color: #856404; /* Cor escura para o título de aviso */
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 10px;
+}
+
+.politica-lista-servicos {
+    text-align: left;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.politica-lista-servicos h3 {
+    text-align: left;
+    color: #343a40;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.politica-lista-servicos ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.politica-lista-servicos ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.aviso-final {
+    font-style: italic;
+    margin-top: 1.5rem;
+    color: #6c757d;
+}

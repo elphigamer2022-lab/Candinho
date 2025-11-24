@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Candinho-estética-Automotiva - Limpeza de Carros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">$Candinho-Estética-Automotiva</div>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1><span id="typing-text"></span></h1>
+                    <p>Oferecemos serviços de limpeza e detalhamento automotivo de alta qualidade.</p>
+                    <a href="servicos.html" class="cta-button">Ver Nossos Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>No $Candinho-estética-Automotiva, nossa paixão é cuidar do seu veículo. Com produtos de primeira linha e técnicas avançadas, garantimos uma limpeza impecável, tanto por dentro quanto por fora.</p>
+            </div>
+        </section>
+        
+        <section class="email-capture-section">
+            <div class="container">
+                <h2>Receba Nossas Ofertas Exclusivas por WhatsApp!</h2>
+                <p>Cadastre seu número para receber promoções especiais e dicas de cuidado com seu carro.</p>
+                <form id="whatsapp-capture-form">
+                    <input type="tel" id="whatsapp-input" placeholder="Seu número de WhatsApp" required>
+                    <button type="submit" class="cta-button">Cadastrar WhatsApp</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <div class="container">
+                <h2>O que nossos clientes dizem</h2>
+                <div class="reviews-list">
+                </div>
+                <div class="review-form">
+                    <h3>Deixe sua avaliação</h3>
+                    <form id="feedback-form">
+                        <textarea id="review-text" class="review-input" placeholder="Escreva seu comentário..." required></textarea>
+                        <div class="rating-stars">
+                            <span data-value="1">&#9733;</span>
+                            <span data-value="2">&#9733;</span>
+                            <span data-value="3">&#9733;</span>
+                            <span data-value="4">&#9733;</span>
+                            <span data-value="5">&#9733;</span>
+                        </div>
+                        <button type="submit" class="review-button cta-button">Enviar Avaliação</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    <section class="regras-servico">
+        <div class="container">
+            <h2>⚠️ Regras e Condições de Serviço</h2>
+            <p>Ao solicitar e confirmar um agendamento ou pedido, você aceita integralmente as seguintes condições, essenciais para o bom andamento dos nossos serviços:</p>
+            
+            <div class="politica-lista-servicos">
+                <h3>Agendamento e Transação:</h3>
+                <ul>
+                    <li>Todo **agendamento** feito pelo chatbot ou pedido finalizado pelo catálogo via WhatsApp é considerado um **compromisso vinculante**.</li>
+                    <li>**Cancelamentos** devem ser comunicados com no mínimo **2 horas de antecedência**. A não comunicação pode implicar restrições futuras.</li>
+                    <li>Para pagamentos via **Pix**, a confirmação da transação deve ser enviada imediatamente via WhatsApp para garantir a reserva do horário.</li>
+                </ul>
+
+                <h3>Responsabilidade Civil:</h3>
+                <ul>
+                    <li>A **$Candinho-estética-Automotiva** se responsabiliza integralmente pelo veículo e por quaisquer danos causados **durante a execução do serviço** em nossas dependências.</li>
+                    <li>Não nos responsabilizamos por danos ou problemas decorrentes de **mau uso do veículo** ou dos produtos após a finalização e retirada do carro.</li>
+                    <li>A marca e o conteúdo visual do site são protegidos por direitos autorais e não podem ser copiados ou redistribuídos.</li>
+                </ul>
+            </div>
+            <p class="aviso-final">Se houver qualquer dúvida sobre os termos ou serviços, utilize o nosso Chatbot de Agendamentos. Sua satisfação é nossa prioridade.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="social-icons">
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:contato@cleancar.com.br"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/5599999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2025 $Candinho-estética-Automotiva. Todos os direitos reservados.</p>
+    </footer>
+    
+    <button id="chatbot-toggle-btn">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+    <div id="chatbot-container" class="hidden">
+        <div id="chatbot-header">
+            <span>Assistência 24 h</span>
+            <button id="close-chatbot-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chatbot-body">
+        </div>
+        <div id="chatbot-footer">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <script src="chatbot.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>
